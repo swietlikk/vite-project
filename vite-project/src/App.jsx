@@ -1,9 +1,14 @@
-import './App.scss';
+import React from "react";
 import { Headline } from "./components/Headline.jsx";
 import TodoAdd from "./components/TodoAdd.jsx";
 import TodoList from "./components/TodoList.jsx";
+import TimeCalculator from "./components/TimeCalculator.jsx";
+import HourToMinuteCalculator from "./components/HourToMinuteCalculator";
+
+
+import './App.scss';
 import useLocalStorage from "./hooks/useLocalStorage.js";
-import { useState } from "react"; // Import useState
+import { useState } from "react";
 
 function App() {
     const [todo, setTodo] = useLocalStorage('task');
@@ -88,7 +93,10 @@ function App() {
                     )}
                 </div>
             </section>
+            <TimeCalculator />
+            <HourToMinuteCalculator/>
         </div>
     );
 }
+
 export default App;

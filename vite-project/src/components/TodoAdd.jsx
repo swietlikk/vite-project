@@ -40,10 +40,29 @@ function TodoAdd({ todo, setTodo, addTodo, category, setCategory, time, setTime 
                 onChange={(event) => setCategory(event.target.value)}
             >
                 <option value="">Wybierz kategorię</option>
-                <option value="Default">Default</option>
                 <option value="Work">Work</option>
-                <option value="Personal">Personal</option>
-                {/* Dodaj więcej opcji według potrzeb */}
+                <option value="Hobby">Hobby</option>
+                <option value="House Chores">House Chores</option>
+                <option value="Fitness">Fitness</option>
+                <option value="Reading">Reading</option>
+                <option value="Learning">Learning</option>
+                <option value="Music">Music</option>
+                <option value="Travel">Travel</option>
+                <option value="Art">Art</option>
+                <option value="Cooking">Cooking</option>
+                <option value="Technology">Technology</option>
+                <option value="Gaming">Gaming</option>
+                <option value="Movies">Movies</option>
+                <option value="Shopping">Shopping</option>
+                <option value="Social">Social</option>
+                <option value="Health">Health</option>
+                <option value="Self-Care">Self-Care</option>
+                <option value="Productivity">Productivity</option>
+                <option value="Education">Education</option>
+                <option value="Family">Family</option>
+                <option value="Pets">Pets</option>
+                <option value="Random">Random</option>
+                <option value="Default">Something Different</option>
             </select>
             {categoryError && (
                 <div className="error-message-category">
