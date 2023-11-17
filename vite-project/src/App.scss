@@ -226,3 +226,18 @@ button:focus {
   background-color: rgba(254, 254, 254, 1);
   box-shadow: 0 3px 6px black;
 }
+
+.btn-analyze{
+  color: rgb(182, 182, 182);
+  padding: 10px;
+  font-weight: 300;
+  font-size: 14px;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}

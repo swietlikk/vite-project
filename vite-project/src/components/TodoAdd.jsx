@@ -30,7 +30,7 @@ function TodoAdd({ todo, setTodo, addTodo, category, setCategory, time, setTime 
                 type="text"
                 className="todo-input"
                 value={todo}
-                placeholder="What needs to be done?"
+                placeholder="What needs to be done today?"
                 onChange={(event) => setTodo(event.target.value)}
                 onKeyUp={handleAddTodo}
             />

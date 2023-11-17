@@ -15,24 +15,7 @@ const TimeCalculator = () => {
         }
     };
 
-    return (
-        <div className="time-calculator calculator">
-        <div className="time-calculator">
-            <h2>Minutes to Hours Calculator</h2>
-            <input
-                type="number"
-                placeholder="Enter minutes"
-                value={minutes}
-                onChange={(e) => setMinutes(e.target.value)}
-                onKeyUp={(e) => e.key === 'Enter' && handleCalculate()}
-            />
-            <button onClick={handleCalculate}>Calculate</button>
-            <p>
-                {result.hours > 0 && `${result.hours}h`} {result.minutes > 0 && `${result.minutes}min`}
-            </p>
-        </div>
-        </div>
-    );
+
 }
 
 export default TimeCalculator;
