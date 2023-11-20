@@ -16,15 +16,17 @@ function HourToMinuteCalculator() {
     return (
         <div className="hour-to-minute-calculator calculator">
         <div className="hour-to-minute-calculator">
-            <h2>Hours to Minutes Calculator</h2>
+            <h2 className="calculator-hdl">Hours to Minutes Calculator</h2>
             <input
+                className="calculator-input"
                 type="number"
                 placeholder="Enter hours"
                 value={hours}
                 onChange={(e) => setHours(e.target.value)}
                 onKeyUp={(e) => e.key === 'Enter' && handleConvert()}
             />
-            <button onClick={handleConvert}>Calculate</button>
+            <button onClick={handleConvert}
+            className="calculator-btn">Calculate</button>
             {minutes !== "" && (
                 <p>
                     {hours} hour(s) is equal to {minutes} minute(s).

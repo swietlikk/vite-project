@@ -22,7 +22,7 @@ const PieLegend = () => {
 
     return (
         <div>
-            <button onClick={handleShowLegend}>Show Legend</button>
+
         </div>
     );
 };

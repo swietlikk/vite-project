@@ -15,6 +15,7 @@ body {
   text-shadow: 0 3px 6px black;
 }
 
+
 .todos {
   width: 550px;
   margin-inline: auto;
@@ -219,13 +220,48 @@ button:focus {
 }
 
 .calculator {
-  width: 550px;
+  width: 520px;
   margin: 20px auto;
   padding: 15px;
   border: 1px solid black;
   background-color: rgba(254, 254, 254, 1);
   box-shadow: 0 3px 6px black;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+
+  &-hdl{
+    font-size: 24px;
+    line-height: 1.4;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 100;
+    color: #757575;
+  }
+
+  &-input{
+    padding: 5px;
+    border: 1px solid black;
+    line-height: 1.4;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 100;
+  }
+
+  &-btn{
+    padding: 5px;
+    background-color: #1F97AF;
+    border: 1px solid black;
+    border-left: 0;
+    color: white;
+    line-height: 1.4;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: 100;
+
+    &:hover{
+      cursor: pointer;
+    }
+  }
 }
+
 
 .btn-analyze{
   color: rgb(182, 182, 182);

@@ -39,7 +39,7 @@ function TodoAdd({ todo, setTodo, addTodo, category, setCategory, time, setTime 
                 value={category}
                 onChange={(event) => setCategory(event.target.value)}
             >
-                <option value="">Wybierz kategorię</option>
+                <option value="">Select a category</option>
                 <option value="Work">Work</option>
                 <option value="Hobby">Hobby</option>
                 <option value="House Chores">House Chores</option>
@@ -66,7 +66,7 @@ function TodoAdd({ todo, setTodo, addTodo, category, setCategory, time, setTime 
             </select>
             {categoryError && (
                 <div className="error-message-category">
-                    Wybierz kategorię*
+                    Select a category*
                 </div>
             )}
             <input
@@ -78,7 +78,7 @@ function TodoAdd({ todo, setTodo, addTodo, category, setCategory, time, setTime 
             />
             {timeError && (
                 <div className="error-message-time">
-                    Podaj poprawny czas*
+                    Select the correct time*
                 </div>
             )}
         </div>

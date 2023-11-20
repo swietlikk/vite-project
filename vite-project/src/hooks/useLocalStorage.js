@@ -17,7 +17,7 @@ function useLocalStorage(key) {
 
     useEffect(() => {
         updateLocalStorage(key, data);
-    }, [key, data]); // Include 'key' in the dependencies to track changes in the storage key
+    }, [key, data]);
 
     return [data, setData];
 }
