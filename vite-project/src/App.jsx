@@ -78,6 +78,7 @@ const App = () => {
             }, []);
 
     return (
+        <div className="todosection">
         <div className="todoapp">
             <Headline />
             <section className="todos">
@@ -128,6 +129,7 @@ const App = () => {
             <PieChartComponent data={pieChartData} />
             <PieLegend />
         </div>
+    </div>
     );
 };
 

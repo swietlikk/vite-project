@@ -3,6 +3,16 @@ body {
   background-color: rgb(245, 245, 245);
 }
 
+.todosection{
+  display: flex;
+}
+
+
+.todoapp{
+  justify-content: center;
+  align-items: center;
+  margin-inline: auto;
+}
 
 .todoapp h1 {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -13,6 +23,10 @@ body {
   text-rendering: optimizeLegibility;
   margin: 40px 0 40px 0;
   text-shadow: 0 3px 6px black;
+  @media screen and (max-width: 860px) {
+    font-size: 85px;
+
+  }
 }
 
 
@@ -33,6 +47,10 @@ body {
     line-height: 1.4;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     font-weight: 100;
+
+    @media screen and (max-width: 860px) {
+      width: 90%;
+    }
 
     &::placeholder {
       color: #757575;
@@ -277,3 +295,4 @@ button:focus {
     text-decoration: underline;
   }
 }
+
