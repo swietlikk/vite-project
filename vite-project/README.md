@@ -32,7 +32,7 @@ Jest to prosta aplikacja Todo napisana w React. Pozwala na dodawanie, usuwanie i
     npm run dev
     
 
-Aplikacja będzie dostępna pod adresem [http://localhost:3000/](http://localhost:3000/).
+Aplikacja będzie dostępna pod adresem [http://localhost:5173/](http://localhost:5173/).
 
 ## Funkcje
 
