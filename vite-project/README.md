@@ -1,8 +1,54 @@
-# React + Vite
+# Plan your day
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Prosta aplikacja do zarządzania zadaniami, napisana w React.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Wprowadzenie
+
+Jest to prosta aplikacja Todo napisana w React. Pozwala na dodawanie, usuwanie i edytowanie zadań, a także analizowanie czasu wydanego na różne kategorie zadań.
+
+## Uruchomienie
+
+1. Sklonuj repozytorium:
+
+
+    git clone https://github.com/twoje-konto/todo-app.git
+
+2. Przejdź do katalogu projektu:
+
+   
+    cd vite-project
+    
+
+3. Zainstaluj zależności:
+
+
+    npm install
+
+
+4. Uruchom aplikację:
+
+    
+    npm run dev
+    
+
+Aplikacja będzie dostępna pod adresem [http://localhost:3000/](http://localhost:3000/).
+
+## Funkcje
+
+- Dodawanie nowych zadań.
+- Edycja tytułów, kategorii i czasu zadań.
+- Oznaczanie zadań jako zakończone.
+- Usuwanie zadań oraz zadań zakończonych.
+- Analiza czasu wydanego na różne kategorie zadań.
+
+## Technologie
+
+- React
+- ECharts (do wykresów kołowych)
+
+## Autor
+
+[Adam Świetlicki]
+
+---
