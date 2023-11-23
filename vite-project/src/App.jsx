@@ -29,7 +29,6 @@ const App = () => {
             time !== ''
         ) {
             if (editTask) {
-                // Edytuj istniejące zadanie
                 const updatedTodos = todos.map((task) =>
                     task.id === editTask.id
                         ? {
@@ -43,7 +42,6 @@ const App = () => {
                 setTodos(updatedTodos);
                 setEditTask(null);
             } else {
-                // Dodaj nowe zadanie
                 setTodos([
                     {
                         id: getId(todos),
@@ -56,7 +54,6 @@ const App = () => {
                 ]);
             }
 
-            // Resetuj stany
             setTodo('');
             setCategory('');
             setTime('');

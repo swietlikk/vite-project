@@ -38,7 +38,7 @@ body {
   box-shadow: 0 3px 6px black;
 
   .todo-input {
-    padding: 16px 16px 16px 60px;
+    padding: 16px 16px 16px 35px;
     border: none;
     box-shadow: inset 0 -2px 1px rgba(0, 0, 0, 0.03);
     box-sizing: border-box;
@@ -247,6 +247,7 @@ button:focus {
   align-items: center;
   justify-content: center;
   display: flex;
+  padding-bottom: 30px;
 
   &-hdl{
     font-size: 24px;
