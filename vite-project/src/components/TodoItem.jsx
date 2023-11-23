@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-function TodoItem({ task, handleChangeStatus, handleDeleteTodo }) {
+function TodoItem({ task, handleChangeStatus, handleDeleteTodo, handleEditTask }) {
     return (
         <li className="todos-item" key={task.id}>
             <span
@@ -15,6 +15,12 @@ function TodoItem({ task, handleChangeStatus, handleDeleteTodo }) {
                 onClick={() => handleDeleteTodo(task)}
             >
                 delete
+            </button>
+            <button
+                className="btn-edit"
+                onClick={() => handleEditTask(task)}
+            >
+                Edit
             </button>
         </li>
     );

@@ -16,7 +16,7 @@ const App = () => {
     const [category, setCategory] = useState('');
     const [time, setTime] = useState('');
     const [showDone, setShowDone] = useState(false);
-
+    const [editTask, setEditTask] = useState(null);
 
     const getId = (todos) =>
         todos.length === 0 ? 1 : Math.max(...todos.map((task) => task.id)) + 1;
@@ -28,19 +28,38 @@ const App = () => {
             category !== '' &&
             time !== ''
         ) {
-            setTodos([
-                {
-                    id: getId(todos),
-                    status: 'in progress',
-                    title: todo,
-                    category: category,
-                    time: time === '' ? 0 : parseInt(time),
-                },
-                ...todos,
-            ]);
+            if (editTask) {
+                // Edytuj istniejące zadanie
+                const updatedTodos = todos.map((task) =>
+                    task.id === editTask.id
+                        ? {
+                            ...task,
+                            title: todo,
+                            category: category,
+                            time: time === '' ? 0 : parseInt(time),
+                        }
+                        : task
+                );
+                setTodos(updatedTodos);
+                setEditTask(null);
+            } else {
+                // Dodaj nowe zadanie
+                setTodos([
+                    {
+                        id: getId(todos),
+                        status: 'in progress',
+                        title: todo,
+                        category: category,
+                        time: time === '' ? 0 : parseInt(time),
+                    },
+                    ...todos,
+                ]);
+            }
+
+            // Resetuj stany
             setTodo('');
-            setTime('');
             setCategory('');
+            setTime('');
         }
     };
 
@@ -61,6 +80,33 @@ const App = () => {
         setShowDone(!showDone);
     };
 
+    const handleEditTask = (task) => {
+        setEditTask(task);
+        setTodo(task.title);
+        setCategory(task.category);
+        setTime(task.time.toString());
+    };
+
+    const handleSaveEdit = () => {
+        if (editTask) {
+            const updatedTodos = todos.map((task) =>
+                task.id === editTask.id
+                    ? {
+                        ...task,
+                        title: todo,
+                        category: category,
+                        time: time === '' ? 0 : parseInt(time),
+                    }
+                    : task
+            );
+            setTodos(updatedTodos);
+            setEditTask(null);
+            setTodo('');
+            setCategory('');
+            setTime('');
+        }
+    };
+
     const pieChartData = showDone
         ? todos
             .filter((task) => task.status === 'done')
@@ -79,57 +125,58 @@ const App = () => {
 
     return (
         <div className="todosection">
-        <div className="todoapp">
-            <Headline />
-            <section className="todos">
-                <TodoAdd
-                    todo={todo}
-                    setTodo={setTodo}
-                    addTodo={handleAddTodo}
-                    category={category}
-                    setCategory={setCategory}
-                    time={time}
-                    setTime={setTime}
-                />
-                <TodoList
-                    todos={todos}
-                    handleChangeStatus={handleChangeStatus}
-                    handleDeleteTodo={handleDeleteTodo}
-                />
+            <div className="todoapp">
+                <Headline />
+                <section className="todos">
+                    <TodoAdd
+                        todo={todo}
+                        setTodo={setTodo}
+                        addTodo={handleAddTodo}
+                        category={category}
+                        setCategory={setCategory}
+                        time={time}
+                        setTime={setTime}
+                    />
+                    <TodoList
+                        todos={todos}
+                        handleChangeStatus={handleChangeStatus}
+                        handleDeleteTodo={handleDeleteTodo}
+                        handleEditTask={handleEditTask}
+                    />
 
-                <div className="box">
-                    <p className="counter">
-                        {todos.filter((task) => task.status === 'in progress').length} item
-                    </p>
-                    {todos.some((task) => task.status === 'done') && (
-                        <>
-                            <button className="btn" onClick={handleDeleteDoneTasks}>
-                                Delete Completed
-                            </button>
-                            <button className="btn" onClick={handleShowDone}>
-                                <a className="btn-analyze" href="#pie-chart">Analyze your day</a>
-                            </button>
-                            <div className="btn-delete-container">
-                                {todos.map((task) => (
-                                    <button
-                                        key={task.id}
-                                        className="btn-delete"
-                                        onClick={() => handleDeleteTodo(task)}
-                                    >
-                                        X
-                                    </button>
-                                ))}
-                            </div>
-                        </>
-                    )}
-                </div>
-            </section>
-            <TimeCalculator />
-            <HourToMinuteCalculator />
-            <PieChartComponent data={pieChartData} />
-            <PieLegend />
+                    <div className="box">
+                        <p className="counter">
+                            {todos.filter((task) => task.status === 'in progress').length} item
+                        </p>
+                        {todos.some((task) => task.status === 'done') && (
+                            <>
+                                <button className="btn" onClick={handleDeleteDoneTasks}>
+                                    Delete Completed
+                                </button>
+                                <button className="btn" onClick={handleShowDone}>
+                                    <a className="btn-analyze" href="#pie-chart">Analyze your day</a>
+                                </button>
+                                <div className="btn-delete-container">
+                                    {todos.map((task) => (
+                                        <button
+                                            key={task.id}
+                                            className="btn-delete"
+                                            onClick={() => handleDeleteTodo(task)}
+                                        >
+                                            X
+                                        </button>
+                                    ))}
+                                </div>
+                            </>
+                        )}
+                    </div>
+                </section>
+                <TimeCalculator />
+                <HourToMinuteCalculator />
+                <PieChartComponent data={pieChartData} />
+                <PieLegend />
+            </div>
         </div>
-    </div>
     );
 };
 

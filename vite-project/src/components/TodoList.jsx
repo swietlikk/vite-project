@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import TodoItem from "./TodoItem.jsx";
 
-function TodoList({ todos, handleChangeStatus, handleDeleteTodo }) {
+function TodoList({ todos, handleChangeStatus, handleDeleteTodo, handleEditTask }) {
     return (
         <ul className="todos-list">
             {todos.map((task) => (
@@ -9,6 +9,7 @@ function TodoList({ todos, handleChangeStatus, handleDeleteTodo }) {
                     key={task.id}
                     handleChangeStatus={handleChangeStatus}
                     handleDeleteTodo={handleDeleteTodo}
+                    handleEditTask={handleEditTask}
                     task={task}
                 />
             ))}
