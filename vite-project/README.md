@@ -1,53 +1,53 @@
 # Plan your day
 
-Prosta aplikacja do zarządzania zadaniami, napisana w React.
+A simple task management application built with React.
 
 
-## Wprowadzenie
+## Introduction
 
-Jest to prosta aplikacja Todo napisana w React. Pozwala na dodawanie, usuwanie i edytowanie zadań, a także analizowanie czasu wydanego na różne kategorie zadań.
+This is a straightforward Todo application written in React. It allows adding, deleting, and editing tasks, as well as analyzing the time spent on different task categories.
 
-## Uruchomienie
+## Getting Started
 
-1. Sklonuj repozytorium:
+1. Clone the repository:
 
 
     git clone https://github.com/twoje-konto/todo-app.git
 
-2. Przejdź do katalogu projektu:
+2. Navigate to the project directory:
 
    
     cd vite-project
     
 
-3. Zainstaluj zależności:
+3. Install dependencies:
 
 
     npm install
 
 
-4. Uruchom aplikację:
+4. Run the application:
 
     
     npm run dev
-    
 
-Aplikacja będzie dostępna pod adresem [http://localhost:5173/](http://localhost:5173/).
 
-## Funkcje
+The application will be available at [http://localhost:5173/](http://localhost:5173/).
 
-- Dodawanie nowych zadań.
-- Edycja tytułów, kategorii i czasu zadań.
-- Oznaczanie zadań jako zakończone.
-- Usuwanie zadań oraz zadań zakończonych.
-- Analiza czasu wydanego na różne kategorie zadań.
+## Features
 
-## Technologie
+- Adding new tasks.
+- Editing titles, categories, and task durations.
+- Marking tasks as completed.
+- Deleting tasks and completed tasks.
+- Analyzing time spent on different task categories.
+
+## Technologies
 
 - React
-- ECharts (do wykresów kołowych)
+- ECharts (for pie charts)
 
-## Autor
+## Author
 
 [Adam Świetlicki]
 
