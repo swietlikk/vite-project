@@ -1,6 +1,9 @@
 
 body {
+  background: url("https://cdn-share-sprites.flaticon.com/pack/4/4558/4558072-office_3x2.jpg");
   background-color: rgb(245, 245, 245);
+  margin: 0;
+  padding: 0;
 }
 
 .todosection{
@@ -12,6 +15,8 @@ body {
   justify-content: center;
   align-items: center;
   margin-inline: auto;
+  background-color: rgb(245, 245, 245);
+  box-shadow: 0 3px 6px black;
 }
 
 .todoapp h1 {
@@ -21,7 +26,7 @@ body {
   text-align: center;
   color: #1F97AF;
   text-rendering: optimizeLegibility;
-  margin: 40px 0 40px 0;
+  margin: 20px 20px 20px 20px;
   text-shadow: 0 3px 6px black;
   @media screen and (max-width: 860px) {
     font-size: 85px;
